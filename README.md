@@ -1,4 +1,4 @@
-# Sportident online control using Tinymesh 169Mhz radio. 
+# Sportident online control using Tinymesh 169Mhz radio
 A forest-optimized, reliable mesh radio for Sportident with up to 1,5km per hop.
 This document introduces the project idea and product vision on a high level.
 # Project context and background
@@ -12,12 +12,14 @@ The radio units communicate using a tried and tested mesh radio protocol from Ra
 ## Sportident Short Range Radio (SRR)
 The Sportident units at the control are SRR stations, which communicate with the radio unit via a proprietary Sportident radio protocol on the 2,4 GHz band. 
 # Project progress and status
+
 This has been completed so far:
 1.	Selected and tested antenna solution. 1,5km hop reached with rollup slim-jim antenna. 
 2.	Verified Tinymesh mesh radio network in real Orienteering competition using Tinymesh developer kits in July 2016. 
 3.	Written pc application in python to receive and parse Tinymesh and Sportident packets. Monitoring of the mesh network. Checks that all units are online, even if no control punches are made.
 4.	Designed and built a neat field-deployable radio unit with custom-printed circuitboard, surface-mounted Tinymesh chip, battery, and a Teensy (a cheap small Arduino style microcontroller).
 5.	Written and tested Teensy code to simulate Sportident punches with. Tested connectivity over Tinymesh from Teensy to the python application running on the PC.
+
 Remains to do:
 -	Connect SRR-OEM chip to the Teensy and test serial communication with Teensy.
 -	Test end-to-end from punch in Sportident station to the python application on the PC.
