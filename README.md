@@ -4,7 +4,7 @@ This document introduces the project idea and product vision on a high level.
 # Project context and background
 In orienteering and other outdoor sports, the Sportident system is often used to electronically register when a participant passes a checkpoint. One drawback of Sportident is that the checkpoint pass time registrations cannot be read out until the participant has finished the course. In order to make sports using the Sportident system more exciting for the audience, there is a need for real-time communication from the checkpoints to the competition administration at the arena. A number of solutions already exist for this, such as the Radio Online Control, current loop signaling over military telephone wire, etc. While they each have their advantages, most solutions are a bit bulky which makes it burdensome to deploy more than a couple of online checkpoints in each race.
 # Product vision
-This project aims to produce a neat lightweight radio solution that is easy to deploy in forest conditions, while being very reliable in terms of delivering 100% of punches to the arena in all possible weather conditions. The finished product is a flexible 130 cm roll-up antenna, which is directly attached to a radio unit - a small box about the size of a fist. The antenna + radio unit can hang from a tree anywhere within 8m from the Sportident units at the control. No cabling is needed on the ground. No calibration of directional antennas is needed.
+This project aims to produce a neat lightweight radio solution that is easy to deploy in forest conditions, while being very reliable in terms of delivering 100% of punches to the arena in all possible weather conditions. The finished product is a radio unit - a small box about the size of a fist - which is directly attached to a flexible 130 cm roll-up antenna. The antenna + radio unit can hang from a tree anywhere within 8m from the Sportident units at the control. No cabling is needed on the ground. No calibration of directional antennas is needed.
 About 10 radio units including antennas can be carried in a backpack and easily deployed by one person with very limited technical knowledge. 
 # Technologies used
 ## Tinymesh
@@ -19,7 +19,7 @@ Apart from the standard off-the-shelf Sportident SRR stations, the system consis
 
 ## The radio unit
 
-The radio unit i a small box of electronics with only one external connector for the SlimJim roll-up antenna. As mentioned, the antenna and the radio unit box are meant to hang from a tree nearby the checkpoint. Inside the box, there is a custom made printed
+The radio unit is a small box of electronics with only one external connector for the SlimJim roll-up antenna. As mentioned, the antenna and the radio unit box are meant to hang from a tree nearby the checkpoint. Inside the box, there is a custom made printed
 circuit board (PCB) with:
 - a Sportident SRR receiver chip, which listens to 2,4GHz punch packets and sends them out over UART serial. 
 - A Teensy-LC (a cheap small Arduino style microcontroller) receives the punch data and creates a Tinymesh data packet and passes it on to the Tinymesh radio module, again over UART serial. 
