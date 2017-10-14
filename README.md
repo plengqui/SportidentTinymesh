@@ -27,6 +27,11 @@ circuit board (PCB) with:
 - The Teensy-LC microcontroller also buffers punches if the Tinymesh module should be busy, or if it is waiting for a free timeslot on the frequency. It also sends monitoring packets so that the central pc application can allways know all radio units are up and reachable.
 - Two 18650 Lithium cells and a voltage regulator, serving the 3,3V needed by Tinymesh and Teensy-LC.
 
+## The Gateway
+
+This is the central part of the system that collects all punches from all controls and forwards them to the competition administration system. It also monitors the health and connectivity status of all controls. 
+The Gateway is a PC running a Python application. A Tinymesh module configured as the gateway of the mesh network is connected to the PC. To save time, we have used the Tinymesh Devkit which has a USB connection and appears as a logical COM port in the PC. 
+The Python application consists of two parts: a small simple script running as a separate process which just listens to the COM port of the Tinymesh gateway and writes every received packet to a store-and-forward queue. This queue is read by the main python application which parses each Tinymesh packet on the queue and handles it. Packets that are punch registrations are sent to the competition administration system using the SIRAP protocol. The application also has a GUI that shows status and health of each control, and any alarms. 
 
 # Project progress and status
 
@@ -37,7 +42,7 @@ This has been completed so far:
 4.	Designed and built a neat field-deployable radio unit with custom made printed circuit board (PCB), surface-mounted Tinymesh chip, battery, and a Teensy (a cheap small Arduino style microcontroller) for control logic.
 5.	Written and tested Teensy code to simulate Sportident punches and send them to the Tinymesh radio module. Tested connectivity from the Teensy to the python application running on the PC, over Tinymesh radio.
 
-#TODO
+# TODO
 -	Add SRR-OEM chip to the design, sending its serial data at every punch to the Teensy.
 -	Test end-to-end solution from punch in the Sportident station, over Tinymesh radio, to the python application on the PC.
 -	Build more units and test a full mesh network. 
