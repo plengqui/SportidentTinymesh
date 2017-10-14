@@ -11,17 +11,31 @@ About 10 radio units including antennas can be carried in a backpack and easily 
 The radio units communicate using a tried and tested mesh radio protocol from Radiocrafts called Tinymesh. They use the 169 MHz band, which implies wavelengths of almost 2 meters. Thus they have very good propagation even through dense and wet forest. Distances of over 1 km per hop have been tested with continuous operation. Tinymesh is a self-configuring, self-healing, monitorable mesh technology, implemented in a small surface-mounted component containing both transceiver and protocol logic. 
 ## Sportident Short Range Radio (SRR)
 The Sportident units at the control are SRR stations, which communicate with the radio unit via a proprietary Sportident radio protocol on the 2,4 GHz band. 
+
+# System design and architecture
+Apart from the standard off-the-shelf Sportident SRR stations, the system consists of two main parts:
+1. The neat field-deployable radio unit, of which there will be one per checkpoint. The radio unit receives punch data from the Sportident stations over 2,4 GHz, and retransmits it over the 169 MHz Tinymesh network. The Tinymesh network architecture has one central Gateway node to which all data is sent.
+2. The Gateway, consisting of a Tinymesh radio module directly connected to a PC running our custom python application which parses the Tinymesh packets and forwards the Sportident punch data to the competition administration system. We intend to integrate with the OLA competition administration system using the SIRAP protocol.
+
+## The radio unit
+
+The radio unit i a small box of electronics with only one external connector for the SlimJim roll-up antenna. As mentioned, the antenna and the radio unit box are meant to hang from a tree nearby the checkpoint. Inside the box, there is a custom made printed
+circuit board (PCB) with:
+- a Sportident SRR receiver chip, which listens to 2,4GHz punch packets and sends them out over serial. 
+- TO BE CONTINUED
+, surface-mounted Tinymesh chip, battery, and a Teensy (a cheap small Arduino style microcontroller) for control logic.
+
 # Project progress and status
 
 This has been completed so far:
 1.	Selected and tested antenna solution. 1,5km hop reached with rollup slim-jim antenna. 
-2.	Verified Tinymesh mesh radio network in real Orienteering competition using Tinymesh developer kits in July 2016. 
-3.	Written pc application in python to receive and parse Tinymesh and Sportident packets. Monitoring of the mesh network. Checks that all units are online, even if no control punches are made.
-4.	Designed and built a neat field-deployable radio unit with custom-printed circuitboard, surface-mounted Tinymesh chip, battery, and a Teensy (a cheap small Arduino style microcontroller).
-5.	Written and tested Teensy code to simulate Sportident punches with. Tested connectivity over Tinymesh from Teensy to the python application running on the PC.
+2.	Verified Tinymesh mesh radio network in real Orienteering competition using Tinymesh developer kits in July 2016. This used the serial data pass-through mode of Tinymesh.  
+3.	Written pc application in python to receive and parse Tinymesh and Sportident packets. Use Tinymesh in packet mode, to monitor the health of the mesh network using the packet metadata and the various command packets of Tinymesh. This is the Gateway PC Application. 
+4.	Designed and built a neat field-deployable radio unit with custom made printed circuit board (PCB), surface-mounted Tinymesh chip, battery, and a Teensy (a cheap small Arduino style microcontroller) for control logic.
+5.	Written and tested Teensy code to simulate Sportident punches and send them to the Tinymesh radio module. Tested connectivity from the Teensy to the python application running on the PC, over Tinymesh radio.
 
-Remains to do:
--	Connect SRR-OEM chip to the Teensy and test serial communication with Teensy.
--	Test end-to-end from punch in Sportident station to the python application on the PC.
+#TODO
+-	Add SRR-OEM chip to the design, sending its serial data at every punch to the Teensy.
+-	Test end-to-end solution from punch in the Sportident station, over Tinymesh radio, to the python application on the PC.
 -	Build more units and test a full mesh network. 
 
