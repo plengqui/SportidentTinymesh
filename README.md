@@ -11,16 +11,17 @@ About 10 radio units including antennas can be carried in a backpack and easily 
 The radio units communicate using a widely used and well supported mesh radio protocol from Radiocrafts called Tinymesh. They use the 169 MHz band, which implies wavelengths of almost 2 meters. Thus they have very good propagation even through dense and wet forest. Distances of over 1 km per hop have been tested with continuous operation. Tinymesh is a self-configuring, self-healing, monitorable mesh technology, implemented in a small surface-mounted component containing both transceiver and protocol logic. 
 ## Sportident Short Range Radio (SRR)
 The Sportident units at the control are SRR stations, which communicate with the radio unit via a proprietary Sportident radio protocol on the 2,4 GHz band. 
+![sportident srr station](./docs/SportidentSrr.JPG)
 
 # System design and architecture
+![architecture](./docs/architecture.png)
 Apart from the standard off-the-shelf Sportident SRR stations, the system consists of two main parts:
 1. The neat field-deployable radio unit, of which there will be one per checkpoint. The radio unit receives punch data from the Sportident stations over 2,4 GHz, and retransmits it over the 169 MHz Tinymesh network. The Tinymesh network architecture has one central Gateway node to which all data is sent.
 2. The [Gateway](https://github.com/plengqui/tmsi/blob/master/README.md), consisting of a Tinymesh radio module directly connected to a PC running our custom python application which parses the Tinymesh packets and forwards the Sportident punch data to the competition administration system. We intend to integrate with the OLA competition administration system using the SIRAP protocol.
 
-![architecture](./architecture.png)
 
 ## The radio unit
-
+![radio unit](./docs/RadioUnit2.JPG)
 The radio unit is a small box of electronics with only one external connector for the SlimJim roll-up antenna. As mentioned, the antenna and the radio unit box are meant to hang from a tree nearby the checkpoint. Inside the box, there is a custom made printed
 circuit board (PCB) with:
 - a Sportident SRR receiver chip, which listens to 2,4GHz punch packets and sends them out over UART serial. 
@@ -30,9 +31,10 @@ circuit board (PCB) with:
 - Two 18650 Lithium cells and a voltage regulator, serving the 3,3V needed by Tinymesh and Teensy-LC.
 
 ## The Gateway
-
 This is the central part of the system that collects all punches from all controls and forwards them to the competition administration system. It also monitors the health and connectivity status of all controls. 
 The Gateway is a PC running a Python application. A Tinymesh module configured as the gateway of the mesh network is connected to the PC. To save time, we have used the Tinymesh Devkit which has a USB connection and appears as a logical COM port in the PC. 
+![tinymesh gw board](./docs/TinymeshGw.JPG)
+
 The Python application consists of two parts: a small simple script running as a separate process which just listens to the COM port of the Tinymesh gateway and writes every received packet to a store-and-forward queue. This queue is read by the main python application which parses each Tinymesh packet on the queue and handles it. Packets that are punch registrations are sent to the competition administration system using the SIRAP protocol. The application also has a GUI that shows status and health of each control, and any alarms. The Github repository for the gateway is [here](https://github.com/plengqui/tmsi/).
 
 # Project progress and status
