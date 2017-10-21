@@ -35,7 +35,9 @@ This is the central part of the system that collects all punches from all contro
 The Gateway is a PC running a Python application. A Tinymesh module configured as the gateway of the mesh network is connected to the PC. To save time, we have used the Tinymesh Devkit which has a USB connection and appears as a logical COM port in the PC. 
 ![tinymesh gw board](./docs/TinymeshGw.JPG)
 
-The Python application consists of two parts: a small simple script running as a separate process which just listens to the COM port of the Tinymesh gateway and writes every received packet to a store-and-forward queue. This queue is read by the main python application which parses each Tinymesh packet on the queue and handles it. Packets that are punch registrations are sent to the competition administration system using the SIRAP protocol. The application also has a GUI that shows status and health of each control, and any alarms. The Github repository for the gateway is [here](https://github.com/plengqui/tmsi/).
+The Python application consists of two parts: a small simple script running as a separate process which just listens to the COM port of the Tinymesh gateway and writes every received packet to a store-and-forward queue. This queue is read by the main python application which parses each Tinymesh packet on the queue and handles it. Packets that are punch registrations are sent to the competition administration system using the SIRAP protocol. The application also has a GUI that shows status and health of each control, and any alarms:
+![GUI](./docs/2017-10-21.png)
+The Github repository for the gateway application is [here](https://github.com/plengqui/tmsi/).
 
 # Project progress and status
 
