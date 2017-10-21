@@ -48,6 +48,15 @@ This has been completed so far:
 4.	Designed and built a neat field-deployable radio unit with custom made printed circuit board (PCB), surface-mounted Tinymesh chip, battery, and a Teensy (a cheap small Arduino style microcontroller) for control logic.
 5.	Written and tested Teensy code to simulate Sportident punches and send them to the Tinymesh radio module. Tested connectivity from the Teensy to the python application running on the PC, over Tinymesh radio.
 
+# Getting the hardware and components
+Are you interested in Orienteering, electronics, and programming? Do you live in the southern Stockholm area? Then I would be happy to lend you any of my stuff so you can test this for real:
+- Tinymesh Development Kit
+- Individual Tinymesh components
+- PCB for Tinymesh components and Teensy
+- Teensy microcontrollers.
+- SlimJim antennas
+Just drop me an email at ```per (kanelbulle) lengquist.se```
+
 # TODO
 -	Add SRR-OEM chip to the design, sending its serial data at every punch to the Teensy.
 -	Test end-to-end solution from punch in the Sportident station, over Tinymesh radio, to the python application on the PC.
