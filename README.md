@@ -17,7 +17,8 @@ The Sportident units at the control are SRR stations, which communicate with the
 ![architecture](./docs/architecture.png)
 Apart from the standard off-the-shelf Sportident SRR stations, the system consists of two main parts:
 1. The neat field-deployable radio unit, of which there will be one per checkpoint. The radio unit receives punch data from the Sportident stations over 2,4 GHz, and retransmits it over the 169 MHz Tinymesh network. The Tinymesh network architecture has one central Gateway node to which all data is sent.
-2. The [Gateway](https://github.com/plengqui/GatewayApplication/blob/master/README.md), consisting of a Tinymesh radio module directly connected to a PC running our custom python application which parses the Tinymesh packets and forwards the Sportident punch data to the competition administration system. We intend to integrate with the OLA competition administration system using the SIRAP protocol.
+2. The Gateway, consisting of a Tinymesh radio module directly connected to a PC running our custom python application which parses the Tinymesh packets and forwards the Sportident punch data to the competition administration system. We intend to integrate with the OLA competition administration system using the SIRAP protocol.
+There is pretty comprehensive documentation of the gateway application code available in its [README](https://github.com/plengqui/GatewayApplication/blob/master/README.md).
 
 
 ## The radio unit
