@@ -60,6 +60,8 @@ Are you interested in Orienteering, electronics, and programming? Do you live in
 
 Just drop me an email at ```per (kanelbulle) lengquist.se```
 
+Also: do you have a suggestion what this system should be called? Current idea is "SMOC - Sportident Mesh Online Controls".
+
 # TODO
 -	Add SRR-OEM chip to the design, sending its serial data at every punch to the Teensy.
 -	Test end-to-end solution from punch in the Sportident station, over Tinymesh radio, to the python application on the PC.
