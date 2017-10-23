@@ -17,7 +17,7 @@ The Sportident units at the control are SRR stations, which communicate with the
 ![architecture](./docs/architecture.png)
 Apart from the standard off-the-shelf Sportident SRR stations, the system consists of two main parts:
 1. The neat field-deployable radio unit, of which there will be one per checkpoint. The radio unit receives punch data from the Sportident stations over 2,4 GHz, and retransmits it over the 169 MHz Tinymesh network. The Tinymesh network architecture has one central Gateway node to which all data is sent.
-2. The [Gateway](https://github.com/plengqui/tmsi/blob/master/README.md), consisting of a Tinymesh radio module directly connected to a PC running our custom python application which parses the Tinymesh packets and forwards the Sportident punch data to the competition administration system. We intend to integrate with the OLA competition administration system using the SIRAP protocol.
+2. The [Gateway](https://github.com/plengqui/GatewayApplication/blob/master/README.md), consisting of a Tinymesh radio module directly connected to a PC running our custom python application which parses the Tinymesh packets and forwards the Sportident punch data to the competition administration system. We intend to integrate with the OLA competition administration system using the SIRAP protocol.
 
 
 ## The radio unit
@@ -37,7 +37,7 @@ The Gateway is a PC running a Python application. A Tinymesh module configured a
 
 The Python application consists of two parts: a small simple script running as a separate process which just listens to the COM port of the Tinymesh gateway and writes every received packet to a store-and-forward queue. This queue is read by the main python application which parses each Tinymesh packet on the queue and handles it. Packets that are punch registrations are sent to the competition administration system using the SIRAP protocol. The application also has a GUI that shows status and health of each control, and any alarms:
 ![GUI](./docs/2017-10-21.png)
-The Github repository for the gateway application is [here](https://github.com/plengqui/tmsi/).
+The Github repository for the gateway application is [here](https://github.com/plengqui/GatewayApplication/).
 
 # Project progress and status
 
