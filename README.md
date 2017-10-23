@@ -8,7 +8,8 @@ This project aims to produce a neat lightweight radio solution that is easy to d
 About 10 radio units including antennas can be carried in a backpack and easily deployed by one person with very limited technical knowledge. 
 # Technologies used
 ## Tinymesh
-The radio units communicate using a widely used and well supported mesh radio protocol from Radiocrafts called Tinymesh. They use the 169 MHz band, which implies wavelengths of almost 2 meters. Thus they have very good propagation even through dense and wet forest. Distances of over 1 km per hop have been tested with continuous operation. Tinymesh is a self-configuring, self-healing, monitorable mesh technology, implemented in a small surface-mounted component containing both transceiver and protocol logic. 
+The radio units communicate using a widely used and well supported mesh radio protocol from Radiocrafts called Tinymesh. They use the 169 MHz band, which implies wavelengths of almost 2 meters. Thus they have very good propagation even through dense and wet forest. Distances of over 1 km per hop have been tested with continuous operation. Tinymesh is a self-configuring, self-healing, monitorable mesh technology, implemented in a small surface-mounted component containing both transceiver and protocol logic.
+The [Tinymesh datasheet](docs/RCxxxxHP-TM_Data_Sheet.pdf) from Radiocrafts contains everything we need to know in this project, from an overview of the solution to detailed explanation of the protocol and packet formats. 
 ## Sportident Short Range Radio (SRR)
 The Sportident units at the control are SRR stations, which communicate with the radio unit via a proprietary Sportident radio protocol on the 2,4 GHz band. 
 ![sportident srr station](./docs/SportidentSrr.JPG)
@@ -16,7 +17,7 @@ The Sportident units at the control are SRR stations, which communicate with the
 # System design and architecture
 ![architecture](./docs/architecture.png)
 Apart from the standard off-the-shelf Sportident SRR stations, the system consists of two main parts:
-1. The neat field-deployable radio unit, of which there will be one per checkpoint. The radio unit receives punch data from the Sportident stations over 2,4 GHz, and retransmits it over the 169 MHz Tinymesh network. The Tinymesh network architecture has one central Gateway node to which all data is sent.
+1. The neat field-deployable radio unit, of which there will be one per checkpoint. The radio unit receives punch data from the Sportident stations over SRR, and retransmits it over the 169 MHz Tinymesh network. The Tinymesh network architecture has one central Gateway node to which all data is sent.
 2. The Gateway, consisting of a Tinymesh radio module directly connected to a PC running our custom python application which parses the Tinymesh packets and forwards the Sportident punch data to the competition administration system. We intend to integrate with the OLA competition administration system using the SIRAP protocol.
 There is pretty comprehensive documentation of the gateway application code available in its [README](https://github.com/plengqui/GatewayApplication/blob/master/README.md).
 
@@ -25,11 +26,11 @@ There is pretty comprehensive documentation of the gateway application code avai
 ![radio unit](./docs/RadioUnit2.JPG)
 The radio unit is a small box of electronics with only one external connector for the SlimJim roll-up antenna. As mentioned, the antenna and the radio unit box are meant to hang from a tree nearby the checkpoint. Inside the box, there is a custom made printed
 circuit board (PCB) with:
-- a Sportident SRR receiver chip, which listens to 2,4GHz punch packets and sends them out over UART serial. 
-- A Teensy-LC (a cheap small Arduino style microcontroller) receives the punch data and creates a Tinymesh data packet and passes it on to the Tinymesh radio module, again over UART serial. 
+- a Sportident SRR receiver chip, which listens to 2,4GHz for punch packets and sends them out over UART serial. 
+- A Teensy-LC (a cheap small Arduino style microcontroller) receives the punch data, creates a Tinymesh data packet and passes it on to the Tinymesh radio module, again over UART serial. 
 - The Tinymesh radio module sends the data packet with the punch data out on the Tinymesh network which forwards it to the gateway Tinymesh module. 
-- The Teensy-LC microcontroller also buffers punches if the Tinymesh module should be busy, or if it is waiting for a free timeslot on the frequency. It also sends monitoring packets so that the central pc application can allways know all radio units are up and reachable.
-- Two 18650 Lithium cells and a voltage regulator, serving the 3,3V needed by Tinymesh and Teensy-LC.
+- The Teensy-LC microcontroller also buffers punches if the Tinymesh module should be busy or waiting for a free timeslot on the frequency. It also sends monitoring packets every 10 seconds so that the central pc application can allways know all radio units are up and connected.
+- Battery: 18650 Lithium cells and a voltage regulator, serving the 3,3V needed by Tinymesh and Teensy-LC.
 
 ## The Gateway
 This is the central part of the system that collects all punches from all controls and forwards them to the competition administration system. It also monitors the health and connectivity status of all controls. 
