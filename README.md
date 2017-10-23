@@ -8,8 +8,13 @@ This project aims to produce a neat lightweight radio solution that is easy to d
 About 10 radio units including antennas can be carried in a backpack and easily deployed by one person with very limited technical knowledge. 
 # Technologies used
 ## Tinymesh
-The radio units communicate using a widely used and well supported mesh radio protocol from Radiocrafts called Tinymesh. They use the 169 MHz band, which implies wavelengths of almost 2 meters. Thus they have very good propagation even through dense and wet forest. Distances of over 1 km per hop have been tested with continuous operation. Tinymesh is a self-configuring, self-healing, monitorable mesh technology, implemented in a small surface-mounted component containing both transceiver and protocol logic.
+The radio units communicate using a widely used and well supported mesh radio protocol from Radiocrafts called Tinymesh. They use the 169 MHz band, which implies wavelengths of almost 2 meters. Thus they have very good propagation even through dense and wet forest. Distances of over 1 km per hop have been tested with continuous operation with 500mW effect and Slim Jim antennas. Tinymesh is a self-configuring, self-healing, monitorable mesh technology, implemented in a small surface-mounted component containing both transceiver and protocol logic.
 The [Tinymesh datasheet](docs/RCxxxxHP-TM_Data_Sheet.pdf) from Radiocrafts contains everything we need to know in this project, from an overview of the solution to detailed explanation of the protocol and packet formats. 
+This radio band is unlicensed in most european countries, including [Sweden](https://www.pts.se/sv/Bransch/Radio/Radiotillstand/Undantag-fran-tillstandsplikt/):
+>88 § 169,400–169,475 MHz: Radiosändare för ospecificerat tillämpningsområde. Högsta effekt: 500 mW e.r.p. Kanaldelning: Upp till 50 kHz. Sändningscykel: < 1 %
+
+>89 § 169,400–169,475 MHz: Radiosändare för mätutrustning. Högsta effekt: 500 mW e.r.p. Kanaldelning: Upp till 50 kHz. Sändningscykel: < 10 %.
+
 ## Sportident Short Range Radio (SRR)
 The Sportident units at the control are SRR stations, which communicate with the radio unit via a proprietary Sportident radio protocol on the 2,4 GHz band. 
 ![sportident srr station](./docs/SportidentSrr.JPG)
@@ -31,6 +36,7 @@ circuit board (PCB) with:
 - The Tinymesh radio module sends the data packet with the punch data out on the Tinymesh network which forwards it to the gateway Tinymesh module. 
 - The Teensy-LC microcontroller also buffers punches if the Tinymesh module should be busy or waiting for a free timeslot on the frequency. It also sends monitoring packets every 10 seconds so that the central pc application can allways know all radio units are up and connected.
 - Battery: 18650 Lithium cells and a voltage regulator, serving the 3,3V needed by Tinymesh and Teensy-LC.
+- Rollup antenna bought [here](http://www.2wayelectronix.com/).
 
 ## The Gateway
 This is the central part of the system that collects all punches from all controls and forwards them to the competition administration system. It also monitors the health and connectivity status of all controls. 
