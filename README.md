@@ -52,7 +52,7 @@ The Github repository for the gateway application is [here](https://github.com/p
 This has been completed so far:
 1.	Selected and tested radio, frequency and antenna solution. 1,5km hop reached with rollup slim-jim antenna with 500 mW effect on the license free 169 MHz ISM band. 
 2.	Verified Tinymesh mesh radio network in real Orienteering competition using Tinymesh developer kits in July 2016. Two controls and one gateway.  This worked great. All punches were received online. 
-3.	Written pc application in python to receive and parse Tinymesh and Sportident packets. Use Tinymesh in packet mode, to monitor the health of the mesh network using the packet metadata and the various command packets of Tinymesh. This is the Gateway PC Application. 
+3.	Written pc application in python to receive and parse Tinymesh and Sportident packets. Use Tinymesh in packet mode, to monitor the health of the mesh network using the packet metadata and the various command packets of Tinymesh. This is the Gateway PC application. 
 4.	Designed and built a neat field-deployable radio unit with custom made printed circuit board (PCB), surface-mounted Tinymesh chip, battery, and a Teensy (a cheap small Arduino style microcontroller) for control logic.
 5.	Written and tested Teensy code to simulate Sportident punches and send them to the Tinymesh radio module. Tested connectivity from the Teensy to the python application running on the PC, over Tinymesh radio.
 
