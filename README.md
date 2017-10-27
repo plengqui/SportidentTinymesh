@@ -15,6 +15,10 @@ This radio band is unlicensed in most european countries, including [Sweden](htt
 
 >89 § 169,400–169,475 MHz: Radiosändare för mätutrustning. Högsta effekt: 500 mW e.r.p. Kanaldelning: Upp till 50 kHz. Sändningscykel: < 10 %.
 
+## Slim Jim antenna
+![slimjim1](http://www.n9tax.com/slim_files/ant_hang.jpg) ![slimjim2](https://www.essexham.co.uk/images/2m-slim-jim.jpg)
+The Slim Jim antenna is perfect for this application, being easy to transport rolled up, and quick to deploy by just hanging it from a tree nearby, up to 8m from the Sportident station. The antenna is 130 cm long, and the small Radio Unit box can be attached diretly at the lower end of the antenna. 
+
 ## Sportident Short Range Radio (SRR)
 The Sportident units at the control are [SRR](https://www.sportident.com/images/PDF/1_si_base_products/8_si-radio/SRR-Kit/SPORTident_SRR_en.pdf) stations, which communicate with the radio unit via a proprietary Sportident radio protocol on the 2,4 GHz band. 
 ![sportident srr station](./docs/SportidentSrr.JPG)
