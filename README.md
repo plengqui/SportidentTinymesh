@@ -58,18 +58,19 @@ This has been completed so far:
 
 # Getting the hardware and components
 Are you interested in Orienteering, electronics, and programming? Do you live in the southern Stockholm area? Then I would be happy to lend you any of my stuff so you can test this for real:
-- Tinymesh Development Kit
-- Individual Tinymesh components
-- PCB for Tinymesh components and Teensy
+- Tinymesh Development Kit.
+- Individual Tinymesh components.
+- PCB for Tinymesh components and Teensy.
 - Teensy microcontrollers.
-- SlimJim antennas
+- SlimJim antennas.
 
 Just drop me an email at ```per (kanelbulle) lengquist.se```
 
 Also: do you have a suggestion what this system should be called? Current idea is "SMOC - Sportident Mesh Online Controls".
 
 # TODO
--	Add SRR-OEM chip to the design, sending its serial data at every punch to the Teensy.
--	Test end-to-end solution from punch in the Sportident station, over Tinymesh radio, to the python application on the PC.
--	Build more units and test a full mesh network. 
+-	Get the Sportident SRR chip working with the Radio Unit. Implement buffering in the Teensy-LC.
+-	Implement SIRAP protocol in the Python Gateway application to forward punches to OLA.
+-	Build more Radio Units and test in more real orienteering events. 
+- Invent a way for the person deploying the Radio Units in the forest to get verification that each deployed online control works end-to-end. Perhaps by the Gateway Application publishing its status logs on a web page.
 
