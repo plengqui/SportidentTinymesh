@@ -18,7 +18,7 @@ Links:
 [Teensy serial UART overview](https://www.pjrc.com/teensy/td_uart.html)
 [Using timers with elapsedMillis](https://www.pjrc.com/teensy/td_timing_elaspedMillis.html)
 
-´´´
+```
 int led = 13;
 int a = 0; //which analog port
 int x = 1000; //the analog measured value
@@ -56,4 +56,4 @@ void loop() {
   delay(10000);
 
 }
-´´´
+```
