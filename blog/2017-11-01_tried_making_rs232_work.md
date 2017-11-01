@@ -1,19 +1,20 @@
-Tried to use my "MAX3232 RS232 Serial Port To TTL Converter Module Male DB9 COM ME" as serial input to the teensy instead of the SRR module.
-Did not work. Teensy reads only gibberish on the serial input, regardless of whether a punch is made or not. 
+# Failed attempt at making RS232 work in place of SRR
+Tried to use my "MAX3232 RS232 Serial Port To TTL Converter Module Male DB9 COM ME" as serial input to the teensy instead of the SRR module. Did not work. Teensy reads only gibberish on the serial input, regardless of whether a punch is made or not. 
+
 Setup:
 RS232 Sportident station connected to my "MAX3232 RS232 Serial Port To TTL Converter Module Male DB9 COM ME". 
 Connected the converter module TXD pin to pin 0 (UART RX1) of the Teensy. It only read random gibberrish, at bursts. 
 I used 4800 baud on both the Sportident station and the Teensy serial port.
 
-To analyze what was actually sent, I wrote a small "logic analyzer". See code below.
+To analyze what was actually sent, I wrote a small "logic analyzer" to run on the Teensy. See code below.
 On my Teensy, each measurement lasted 11 ms with a resolution of 0.011 ms, which should be ok since on bit at 4800 baud is 0.21 ms. 
-I pasted the output into an excel sheet and drew a diagram of it. The captured measurement showed random noise between 0.2 and 0.9V, which is what I got with no input attached at all.
+I pasted the serial monitor output into an excel sheet and drew a diagram of it. The captured measurement showed random noise between 0.2 and 0.9V, which is what I got with no input attached at all.
 I tried to connect to the RXD pin of the converter module instead (just to check) and it read 3,3V constantly. I also tried modifying the logic analyzer script to trigger on low bit (less than 800 analogread), with the same results, i.e. it never triggered when punching.
 Bottom line: i could not get anything that resembled real UART TTL bits out of my converter module. So I will throw those in the bin. Bought them on ebay...
 
 
 
-'''
+´´´
 int led = 13;
 int a = 0; //which analog port
 int x = 1000; //the analog measured value
@@ -51,4 +52,4 @@ void loop() {
   delay(10000);
 
 }
-'''
+´´´
