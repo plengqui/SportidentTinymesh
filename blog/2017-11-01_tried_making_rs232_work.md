@@ -12,12 +12,13 @@ I pasted the serial monitor output into an excel sheet and drew a diagram of it.
 I tried to connect to the RXD pin of the converter module instead (just to check) and it read 3,3V constantly. I also tried modifying the logic analyzer script to trigger on low bit (less than 800 analogread), with the same results, i.e. it never triggered when punching.
 Bottom line: i could not get anything that resembled real UART TTL bits out of my converter module. So I will throw those in the bin. Bought them on ebay...
 
-Links: 
+## Links
 - [RS232 and UART overview](https://www.sparkfun.com/tutorials/215)
 - [Max3232 datasheet](http://www.ti.com/lit/ds/symlink/max3232.pdf)
 - [Teensy serial UART overview](https://www.pjrc.com/teensy/td_uart.html)
 - [Using timers with elapsedMillis](https://www.pjrc.com/teensy/td_timing_elaspedMillis.html)
 
+## Logic analyzer output (as Excel diagrams)
 RXD pin: <img src="./Logic-analyzer-RS232-RXD-pin.PNG" width="250"> 
 
 TXD pin: <img src="./Logic-analyzer-RS232-TXD-pin.PNG" width="250">
@@ -25,8 +26,8 @@ TXD pin: <img src="./Logic-analyzer-RS232-TXD-pin.PNG" width="250">
 As it should be, a punch from SRR module: 
 <img src="./Logic-analyzer-SRR-punch-at-38400-baud.PNG" width="250">
 
-
-
+## Logic analyzer sourcecode
+Logicanalyzer.ino
 ```
 int led = 13;
 int a = 0; //which analog port
