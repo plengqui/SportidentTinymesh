@@ -19,6 +19,7 @@ Links:
 - [Using timers with elapsedMillis](https://www.pjrc.com/teensy/td_timing_elaspedMillis.html)
 
 RXD pin: 
+
 ![RXD pin](./Logic-analyzer-RS232-RXD-pin.PNG)	 
 
 TXD pin: 
