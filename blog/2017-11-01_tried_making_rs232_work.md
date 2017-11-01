@@ -18,15 +18,12 @@ Links:
 - [Teensy serial UART overview](https://www.pjrc.com/teensy/td_uart.html)
 - [Using timers with elapsedMillis](https://www.pjrc.com/teensy/td_timing_elaspedMillis.html)
 
-RXD pin: 
+RXD pin: <img src="./Logic-analyzer-RS232-RXD-pin.PNG" width="250"> 
 
-![RXD pin](./Logic-analyzer-RS232-RXD-pin.PNG =250x)	 
-
-TXD pin: 
-![RXD pin](./Logic-analyzer-RS232-TXD-pin.PNG =250x)
+TXD pin: <img src="./Logic-analyzer-RS232-TXD-pin.PNG" width="250">
 
 As it should be, a punch from SRR module: 
-![SRR](Logic-analyzer-SRR-punch-at-38400-baud.PNG =250x)
+<img src="./Logic-analyzer-SRR-punch-at-38400-baud.PNG" width="250">
 
 
 
