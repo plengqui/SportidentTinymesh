@@ -20,8 +20,10 @@ Links:
 
 RXD pin: 
 ![RXD pin](./Logic-analyzer-RS232-RXD-pin.PNG)	 
+
 TXD pin: 
 ![RXD pin](./Logic-analyzer-RS232-TXD-pin.PNG)
+
 As it should be, a punch from SRR module: 
 ![SRR](Logic-analyzer-SRR-punch-at-38400-baud.PNG)
 
