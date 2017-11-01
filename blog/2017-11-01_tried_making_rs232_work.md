@@ -1,5 +1,5 @@
 # Failed attempt at making RS232 work in place of SRR
-Tried to use my "MAX3232 RS232 Serial Port To TTL Converter Module Male DB9 COM ME" as serial input to the teensy instead of the SRR module. Did not work. Teensy reads only gibberish on the serial input, regardless of whether a punch is made or not. 
+Tried to use my [MAX3232 RS232 Serial Port To TTL Converter Module Male DB9 COM ME](https://www.ebay.com/itm/RS232-Serial-Port-To-TTL-Converter-Module-MAX3232-DB9-Connector-With-Cable-MO-/152193124831) as serial input to the teensy instead of the SRR module. Did not work. Teensy reads only gibberish on the serial input, regardless of whether a punch is made or not. 
 
 Setup:
 RS232 Sportident station connected to my "MAX3232 RS232 Serial Port To TTL Converter Module Male DB9 COM ME". 
@@ -12,7 +12,11 @@ I pasted the serial monitor output into an excel sheet and drew a diagram of it.
 I tried to connect to the RXD pin of the converter module instead (just to check) and it read 3,3V constantly. I also tried modifying the logic analyzer script to trigger on low bit (less than 800 analogread), with the same results, i.e. it never triggered when punching.
 Bottom line: i could not get anything that resembled real UART TTL bits out of my converter module. So I will throw those in the bin. Bought them on ebay...
 
-
+Links: 
+[RS232 and UART overview](https://www.sparkfun.com/tutorials/215)
+[Max3232 datasheet](http://www.ti.com/lit/ds/symlink/max3232.pdf)
+[Teensy serial UART overview](https://www.pjrc.com/teensy/td_uart.html)
+[Using timers with elapsedMillis](https://www.pjrc.com/teensy/td_timing_elaspedMillis.html)
 
 ´´´
 int led = 13;
