@@ -13,10 +13,10 @@ I tried to connect to the RXD pin of the converter module instead (just to check
 Bottom line: i could not get anything that resembled real UART TTL bits out of my converter module. So I will throw those in the bin. Bought them on ebay...
 
 Links: 
-[RS232 and UART overview](https://www.sparkfun.com/tutorials/215)
-[Max3232 datasheet](http://www.ti.com/lit/ds/symlink/max3232.pdf)
-[Teensy serial UART overview](https://www.pjrc.com/teensy/td_uart.html)
-[Using timers with elapsedMillis](https://www.pjrc.com/teensy/td_timing_elaspedMillis.html)
+- [RS232 and UART overview](https://www.sparkfun.com/tutorials/215)
+- [Max3232 datasheet](http://www.ti.com/lit/ds/symlink/max3232.pdf)
+- [Teensy serial UART overview](https://www.pjrc.com/teensy/td_uart.html)
+- [Using timers with elapsedMillis](https://www.pjrc.com/teensy/td_timing_elaspedMillis.html)
 
 ```
 int led = 13;
