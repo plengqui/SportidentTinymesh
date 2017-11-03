@@ -6,7 +6,7 @@ Here is info about getting components and putting it together.
 ## Basic components to get a working unit up for lab/development purposes
 
 ### RC1701HP-TM	Tinymesh transciever module
-![tinymesh](https://radiocrafts.com/wp-content/uploads/2016/08/Produkt2_300dpi_3x2inch-1.jpg)
+<img src="https://radiocrafts.com/wp-content/uploads/2016/08/Produkt2_300dpi_3x2inch-1.jpg" width="100">
 
 Borrow a couple from me, or buy your own from:
 1. http://www.actesolutions.se/sv/produkt/rcxxxx-tm (See how to order from Sweden below.)
@@ -15,7 +15,7 @@ Borrow a couple from me, or buy your own from:
 ### PCB with copper pattern for the Tinymesh module footprint
 See [PCB Readme](./PCB/README.md) on how to order one.
 
-<img src="./docs/PCB.JPG" width="300">
+<img src="./docs/PCB.JPG" width="200">
 
 ### SMA female connector for PCB mount
 https://www.electrokit.com/sma-hona-pcb-4mm-djup.49423
