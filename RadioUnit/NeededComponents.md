@@ -10,13 +10,12 @@ Whip antenna for 169MHz with SMA male connector
 https://www.digikey.se/product-detail/en/taoglas-limited/FW.80.SMA.M/931-1195-ND/3664652
 
 RC1701HP-TM	Tinymesh transciever module
-http://www.actesolutions.se/sv/produkt/rcxxxx-tm (need to order via a company or organization)
+http://www.actesolutions.se/sv/produkt/rcxxxx-tm (See how to order from Sweden below.)
 
 https://www.digikey.com/product-detail/en/radiocrafts-as/RC1701HP-TM-DK/RC1701HP-TM-DK-ND/7100561 
 https://www.digikey.com/product-detail/en/radiocrafts-as/RC1701HP-TM/RC1701HP-TM-ND/7100560 
 (not possible to ship to sweden)
-A demo kit is easiest to use for the Gateway, since it is a ready made appliance that you just connect to the PC with USB. 
-But you could also design and build your own using a USB-to-UART cable and a Tinymesh module. 
+I used a demo kit RC1701HP-TM-DK for the Gateway, since it is a ready made appliance that you just connect to the PC with USB. A demo kit comes with 3 units and costs about 320 USD. But you could also design and build your own gateway unit using a Teensy (which just passes serial straight through) and a Tinymesh module. 
 
 Teensy-LC 
 https://www.electrokit.com/teensy-lc.52909
@@ -48,3 +47,14 @@ To use full transmit power, an additional voltage regulator from the USB's 5V to
 
 Slim Jim VHF antenna tuned for 169.4MHz with SMA male connector.
 http://www.2wayelectronix.com/N9TAX-Original-VHF-Slim-Jim-antenna-VHF-STD.htm
+
+## Ordering Tinymesh in Sweden
+
+I sent email to Acte Solutions order@actesolutions.se 
+You to order via a company or organization (their systems require and organization number). I used the org nr of my orienteering club whch worked fine. I just made sure I got the invoices by email so I could pay them myself.
+
+When I ordered 2016 the prices were:
+34,50 USD each for the modules RC1701HP-TM, minimum quantity 10 pcs.
+320 USD each for the demokit RC1701HP-TM-DK.
+Prices excluding VAD and shipping. Shipping was about 100 SEK for me. Country of origin was Norway (where Radiocrafts are).
+Delivery took about 3 weeks.
