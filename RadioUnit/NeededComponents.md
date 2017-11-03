@@ -1,23 +1,24 @@
-# the Radio Unit: getting Components and putting it together
-
+# Building the Radio Unit
+Here is info about getting components and putting it together.
 
 ## Basic components to get a working unit up for lab/development purposes
 
-RC1701HP-TM	Tinymesh transciever module
+### RC1701HP-TM	Tinymesh transciever module
+![tinymesh](https://radiocrafts.com/wp-content/uploads/2016/08/Produkt2_300dpi_3x2inch-1.jpg)
 Borrow a couple from me, or buy your own from:
 1. http://www.actesolutions.se/sv/produkt/rcxxxx-tm (See how to order from Sweden below.)
 2. https://www.digikey.com/product-detail/en/radiocrafts-as/RC1701HP-TM/RC1701HP-TM-ND/7100560 (not possible to ship to sweden)
 
-PCB with copper pattern for the Tinymesh module footprint
+### PCB with copper pattern for the Tinymesh module footprint
 See [PCB Readme](./PCB/README.md) on how to order one.
 
-SMA female connector for PCB mount
+### SMA female connector for PCB mount
 https://www.electrokit.com/sma-hona-pcb-4mm-djup.49423
 
-Whip antenna for 169MHz with SMA male connector 
+### Whip antenna for 169MHz with SMA male connector 
 https://www.digikey.se/product-detail/en/taoglas-limited/FW.80.SMA.M/931-1195-ND/3664652
 
-Teensy-LC microcontroller
+### Teensy-LC microcontroller
 https://www.electrokit.com/teensy-lc.52909
 
 
