@@ -1,5 +1,6 @@
 # Building the Radio Unit
 Here is info about getting components and putting it together.
+
 <img src="./docs/RadioUnitMounted1.jpg" width="300">
 
 ## Basic components to get a working unit up for lab/development purposes
@@ -15,6 +16,7 @@ Borrow a couple from me, or buy your own from:
 See [PCB Readme](./PCB/README.md) on how to order one.
 
 <img src="./docs/PCB.JPG" width="300">
+
 ### SMA female connector for PCB mount
 https://www.electrokit.com/sma-hona-pcb-4mm-djup.49423
 
@@ -80,12 +82,14 @@ Connect the following:
 | GND | GND |
 | VCC | 3.3V |
 
-<img src="./docs/RadioUnitPinout.JPG" >
+<img src="./docs/RadioUnitPinouts.jpg">
+
 <img src="https://www.pjrc.com/teensy/teensylc_front_pinout.png" width="300">
 
 Do not connect VCC_PA of the Tinymesh to the Teensy 3.3V, since it can not supply the needed amount of current (~400mA). If you want that extra transmit power, you need to add a step-down converter from 5V to 3.3V. Take the 5V from Vin on the Teensy (which is directly connected to the power wire of the USB contact, and feed the resulting 3.3V to VCC_PA on the Tinymesh.
 
 Solder the SMA connector to the three plates at the edge of the PCB. They are GND, RF and GND. Also solder the SMA connector to the GND plane on the back of the PCB.
+
 <img src="./docs/RadioUnitAntennaConnector1.jpg" >
 
 If you use the Sportident SRR module, you connect the following:
