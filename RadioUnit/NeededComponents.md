@@ -5,6 +5,7 @@ Here is info about getting components and putting it together.
 
 ### RC1701HP-TM	Tinymesh transciever module
 ![tinymesh](https://radiocrafts.com/wp-content/uploads/2016/08/Produkt2_300dpi_3x2inch-1.jpg)
+
 Borrow a couple from me, or buy your own from:
 1. http://www.actesolutions.se/sv/produkt/rcxxxx-tm (See how to order from Sweden below.)
 2. https://www.digikey.com/product-detail/en/radiocrafts-as/RC1701HP-TM/RC1701HP-TM-ND/7100560 (not possible to ship to sweden)
@@ -24,13 +25,13 @@ https://www.electrokit.com/teensy-lc.52909
 
 ## Connecting to a Sportident station
 
-SRR dongel for connecting to SRR BSM station
+SRR dongel for connecting to SRR BSM station: 
 http://www.sportident.se/order.aspx?id=472
 
 Alternative: wired connection to RS232 BSM station
-RS232-to-UART converter
+- RS232-to-UART converter
 https://www.electrokit.com/en/max3232-breakout.49804
-RS323 connector
+- RS323 connector
 https://www.electrokit.com/en/dsub-9-conn-male.42706
 
 
@@ -39,12 +40,12 @@ Teensy 3.2 may be an alternative to the Teensy-LC. The LC is cheaper, but the 3.
 https://www.pjrc.com/teensy/external_power.html
 
 I recommend headers for mounting the Teensy on the PCB when in the lab/design phase.
-https://www.electrokit.com/stiftlist-2-54mm-1x40p-brytbar.43412
-https://www.electrokit.com/hylslist-2-54mm-1x40p-svarvad-brytbar.44672
+- https://www.electrokit.com/stiftlist-2-54mm-1x40p-brytbar.43412
+- https://www.electrokit.com/hylslist-2-54mm-1x40p-svarvad-brytbar.44672
 
 Some LEDs and resistors to connect to RSSI and CONN indicator outputs.
 
-Tinymesh Demo Kit:
+### Tinymesh Demo Kit:
 https://www.digikey.com/product-detail/en/radiocrafts-as/RC1701HP-TM-DK/RC1701HP-TM-DK-ND/7100561 
 I used a demo kit RC1701HP-TM-DK for the Gateway, since it is a ready made appliance that you just connect to the PC with USB. A demo kit comes with 3 units and costs about 320 USD. But you could also design and build your own gateway unit using a Teensy (which just passes serial straight through) and a Tinymesh module. 
 
@@ -56,8 +57,8 @@ http://www.2wayelectronix.com/N9TAX-Original-VHF-Slim-Jim-antenna-VHF-STD.htm
 
 ## Ordering Tinymesh in Sweden
 
-I sent email to Acte Solutions order@actesolutions.se 
-You to order via a company or organization (their systems require and organization number). I used the org nr of my orienteering club whch worked fine. I just made sure I got the invoices by email so I could pay them myself.
+I just sent email to Acte Solutions order@actesolutions.se .
+They need you to order via a company or organization (their systems require and organization number). I used the org nr of my orienteering club whch worked fine. I just made sure I got the invoices by email so I could pay them myself.
 
 When I ordered 2016 the prices were:
 34,50 USD each for the modules RC1701HP-TM, minimum quantity 10 pcs.
