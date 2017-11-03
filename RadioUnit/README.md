@@ -1,5 +1,6 @@
 # Building the Radio Unit
 Here is info about getting components and putting it together.
+<img src="./docs/RadioUnitMounted1.JPG" width="300">
 
 ## Basic components to get a working unit up for lab/development purposes
 
@@ -13,8 +14,11 @@ Borrow a couple from me, or buy your own from:
 ### PCB with copper pattern for the Tinymesh module footprint
 See [PCB Readme](./PCB/README.md) on how to order one.
 
+<img src="./docs/PCB.JPG" width="300">
 ### SMA female connector for PCB mount
 https://www.electrokit.com/sma-hona-pcb-4mm-djup.49423
+
+<img src="./docs/RadioUnitAntennaConnector2.JPG" width="300">
 
 ### Whip antenna for 169MHz with SMA male connector 
 https://www.digikey.se/product-detail/en/taoglas-limited/FW.80.SMA.M/931-1195-ND/3664652
@@ -22,10 +26,9 @@ https://www.digikey.se/product-detail/en/taoglas-limited/FW.80.SMA.M/931-1195-ND
 ### Teensy-LC microcontroller
 https://www.electrokit.com/teensy-lc.52909
 
-
 ## Connecting to a Sportident station
 
-SRR dongel for connecting to SRR BSM station: 
+SRR module for connecting to SRR BSM station: 
 http://www.sportident.se/order.aspx?id=472
 
 Alternative: wired connection to RS232 BSM station
