@@ -78,6 +78,7 @@ Connect the following:
 | VCC | 3.3V |
 
 ![teensy](https://www.pjrc.com/teensy/teensylc_front_pinout.png)
+![tinymesh](../docs/TM.GIF)
 
 Do not connect VCC_PA of the Tinymesh to the Teensy 3.3V, since it can not supply the needed amount of current (~400mA). If you want that extra transmit power, you need to add a step-down converter from 5V to 3.3V. Take the 5V from Vin on the Teensy (which is directly connected to the power wire of the USB contact, and feed the resulting 3.3V to VCC_PA on the Tinymesh.
 
