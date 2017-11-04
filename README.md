@@ -77,8 +77,10 @@ Just drop me an email at ```per (kanelbulle) lengquist.se```
 
 Also: do you have a suggestion what this system should be called? Current idea is "SMOC - Sportident Mesh Online Controls".
 
-# TODO
+# TODO: ideas for further improvement
 -	Build more Radio Units and test in more real orienteering events. Please drop me an email if you know where to borrow more SRR master stations.
+- Implement support for RS232 Sportident stations. Support in Teensy for multiple stations (multiple serial ports in).
+- Select a good solution for physical enclosure. Also choose battey, and a good solution for powering up at deployment. 
 - Invent a way for the person deploying the Radio Units in the forest to get verification that each deployed online control works end-to-end. Perhaps by the Gateway Application publishing its status logs on a web page or [Slack](https://api.slack.com/).
 - Use a Radio Unit as Gateway instead of the rather expensive Demo Kit: Write a Teensy program to configure the Tinymesh module as a gateway. Then use a simple Teensy program to pipe through serial data between USB serial and the Tinymesh in normal operation. This should be possible with a simple modification of [MultiSerial.ino](https://github.com/arduino/Arduino/blob/master/build/shared/examples/04.Communication/MultiSerial/MultiSerial.ino).
 
