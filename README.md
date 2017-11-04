@@ -22,7 +22,8 @@ The Slim Jim antenna is perfect for this application, being easy to transport ro
 
 ## Sportident Short Range Radio (SRR)
 The Sportident units at the control are [SRR](https://www.sportident.com/images/PDF/1_si_base_products/8_si-radio/SRR-Kit/SPORTident_SRR_en.pdf) stations, which communicate with the radio unit via a proprietary Sportident radio protocol on the 2,4 GHz band. 
-![sportident srr station](./docs/SportidentSrr.JPG)
+
+<img src="./docs/SportidentSrr.JPG" width="300">
 
 # System design and architecture
 ![architecture](./docs/architecture.png)
@@ -33,7 +34,9 @@ There is pretty comprehensive documentation of the Gateway Application code avai
 
 
 ## The radio unit
-![radio unit](./docs/RadioUnit2.JPG)
+
+<img src="./docs/RadioUnit2.JPG" width="300">
+
 The radio unit is a small box of electronics with only one external connector for the SlimJim roll-up antenna. As mentioned, the antenna and the radio unit box are meant to hang from a tree nearby the checkpoint. Inside the box, there is a custom made printed
 circuit board (PCB) with:
 - a Sportident SRR receiver chip, which listens to 2,4GHz for punch packets and sends them out over UART serial. 
@@ -46,10 +49,13 @@ circuit board (PCB) with:
 ## The Gateway
 This is the central part of the system that collects all punches from all controls and forwards them to the competition administration system. It also monitors the health and connectivity status of all controls. The Gateway is a Tinymesh module configured as the gateway of the mesh network, connected with simple serial to a PC running the Gateway Application. 
 To save time, I have so far used the Tinymesh Demo Kit (RC1701HP-TM-DK) which has a USB connection and appears as a logical COM port in the PC. However, it should be quite easy to use a Radio Unit as gateway (see TODOs below).
-![tinymesh gw board](./docs/TinymeshGw.JPG)
+
+<img src="./docs/TinymeshGw.JPG" width="300">
 
 The Gateway Application is written in Python 3 and consists of two parts: a small simple script running as a separate process which just listens to the COM port of the Tinymesh gateway and writes every received packet to a store-and-forward queue. This queue is read by the main python application which parses each Tinymesh packet on the queue and handles it. Packets that are punch registrations are sent to the competition administration system using the SIRAP protocol. The application also has a GUI that shows status and health of each control, and any alarms:
-![GUI](./docs/2017-10-21.png)
+
+<img src="./docs/2017-10-21.png" width="300">
+
 The Github repository for the gateway application is [here](https://github.com/plengqui/GatewayApplication/).
 
 # Project progress and status
