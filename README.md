@@ -28,7 +28,7 @@ The Sportident units at the control are [SRR](https://www.sportident.com/images/
 ![architecture](./docs/architecture.png)
 Apart from the standard off-the-shelf Sportident SRR stations, the system consists of two main parts:
 1. The neat field-deployable radio unit, of which there will be one per checkpoint. The radio unit receives punch data from the Sportident stations over SRR, and retransmits it over the 169 MHz Tinymesh network. The Tinymesh network architecture has one central Gateway node to which all data is sent.
-2. The Gateway, consisting of a Tinymesh radio module directly connected to a PC running our custom python Gateway Application which parses the Tinymesh packets and forwards the Sportident punch data to the competition administration system. We intend to integrate with the OLA competition administration system using the SIRAP protocol.
+2. The Gateway, consisting of a Tinymesh radio module directly connected to a PC running our custom python Gateway Application which parses the Tinymesh packets and forwards the Sportident punch data to the competition administration system. Integrates with competition administration system like OLA or MeOS using the SIRAP protocol.
 There is pretty comprehensive documentation of the Gateway Application code available in its [README](https://github.com/plengqui/GatewayApplication/blob/master/README.md).
 
 
@@ -61,6 +61,7 @@ This has been completed so far:
 4.	Designed and built a neat field-deployable Radio Unit with custom made printed circuit board (PCB), surface-mounted Tinymesh chip, battery, and a Teensy (a cheap small Arduino style microcontroller) for control logic.
 5.	Written and tested Teensy code to simulate Sportident punches and send them to the Tinymesh radio module. Tested connectivity from the Teensy to the python application running on the PC, over Tinymesh radio. Load tested with 3 simulated punches per second, continuously for 2 hours.
 6.  Got the Sportident SRR chip working with the Radio Unit. So now full integration from Sportident punch to Gateway Application is done. Rudimentary support for flow control reading the Tinymesh CTS status before and after sending each packet. So far relies on Teensys serial buffers for buffering.
+7. Implemented SIRAP protocol in the Python Gateway application. Tested with OLA competition administration system. Now we have a complete end-to-end system!
 
 # Getting the hardware and components
 List of needed components and how to get them is [here](./RadioUnit/NeededComponents.md).
@@ -77,7 +78,6 @@ Just drop me an email at ```per (kanelbulle) lengquist.se```
 Also: do you have a suggestion what this system should be called? Current idea is "SMOC - Sportident Mesh Online Controls".
 
 # TODO
--	Implement SIRAP protocol in the Python Gateway application to forward punches to OLA.
 -	Build more Radio Units and test in more real orienteering events. Please drop me an email if you know where to borrow more SRR master stations.
 - Invent a way for the person deploying the Radio Units in the forest to get verification that each deployed online control works end-to-end. Perhaps by the Gateway Application publishing its status logs on a web page or [Slack](https://api.slack.com/).
 - Use a Radio Unit as Gateway instead of the rather expensive Demo Kit: Write a Teensy program to configure the Tinymesh module as a gateway. Then use a simple Teensy program to pipe through serial data between USB serial and the Tinymesh in normal operation. This should be possible with a simple modification of [MultiSerial.ino](https://github.com/arduino/Arduino/blob/master/build/shared/examples/04.Communication/MultiSerial/MultiSerial.ino).
