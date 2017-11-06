@@ -86,7 +86,7 @@ Also: do you have a suggestion what this system should be called? Current idea i
 # TODO: ideas for further improvement
 -	Build more Radio Units and test in more real orienteering events. Please drop me an email if you know where to borrow more SRR master stations.
 - Implement support for RS232 Sportident stations. Support in Teensy for multiple stations (multiple serial ports in).
-- Select a good solution for physical enclosure. Also choose battey, and a good solution for powering up at deployment. 
+- Select a good solution for physical enclosure. Also decide battery solution: powerbank or 18650 LiIon cells. 
 - Invent a way for the person deploying the Radio Units in the forest to get verification that each deployed online control works end-to-end. Perhaps by the Gateway Application publishing its status logs on a web page or [Slack](https://api.slack.com/).
 - Use a Radio Unit as Gateway instead of the rather expensive Demo Kit: Write a Teensy program to configure the Tinymesh module as a gateway. Then use a [simple Teensy program](https://github.com/arduino/Arduino/blob/master/build/shared/examples/04.Communication/MultiSerial/MultiSerial.ino) to pipe through serial data between USB serial and the Tinymesh in normal operation.
 
