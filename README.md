@@ -18,6 +18,7 @@ This radio band is unlicensed in most european countries, including [Sweden](htt
 
 ## Slim Jim antenna
 ![slimjim1](http://www.n9tax.com/slim_files/ant_hang.jpg) ![slimjim2](https://www.essexham.co.uk/images/2m-slim-jim.jpg)
+
 The Slim Jim antenna is perfect for this application, being easy to transport rolled up, and quick to deploy by just hanging it from a tree nearby, up to 8m from the Sportident station. The antenna is 130 cm long, and the small Radio Unit box can be attached diretly at the lower end of the antenna. 
 
 ## Sportident Short Range Radio (SRR)
@@ -44,7 +45,8 @@ circuit board (PCB) with:
 - The Tinymesh radio module sends the data packet with the punch data out on the Tinymesh network which forwards it to the gateway Tinymesh module. The model number of Tinymesh used is RC1701(HP)-TM.
 - The Teensy-LC microcontroller also buffers punches if the Tinymesh module should be busy or waiting for a free timeslot on the frequency. It also sends monitoring packets every 10 seconds so that the central pc application can allways know all radio units are up and connected.
 - Battery: 18650 Lithium cells and a voltage regulator, serving the 3,3V needed by Tinymesh and Teensy-LC.
-- Rollup antenna bought [here](http://www.2wayelectronix.com/).
+- Antenna for 169MHz with SMA male connector. Either a SlimJim, which you can [build](https://www.essexham.co.uk/slim-jim) or [buy](http://www.2wayelectronix.com/). Or a "normal" whip antenna like [this one](https://www.digikey.se/product-detail/en/taoglas-limited/FW.80.SMA.M/931-1195-ND/3664652). SlimJim is best for real-world application in the woods. A whip is good for lab and test.
+
 
 ## The Gateway
 This is the central part of the system that collects all punches from all controls and forwards them to the competition administration system. It also monitors the health and connectivity status of all controls. The Gateway is a Tinymesh module configured as the gateway of the mesh network, connected with simple serial to a PC running the Gateway Application. 
@@ -69,8 +71,8 @@ This has been completed so far:
 6.  Got the Sportident SRR chip working with the Radio Unit. So now full integration from Sportident punch to Gateway Application is done. Rudimentary support for flow control reading the Tinymesh CTS status before and after sending each packet. So far relies on Teensys serial buffers for buffering.
 7. Implemented SIRAP protocol in the Python Gateway application. Tested with OLA competition administration system. Now we have a complete end-to-end system!
 
-# Getting the hardware and components
-List of needed components and how to get them is [here](./RadioUnit/README.md).
+# Getting the hardware and assembling it
+List of needed components, how to get them and putting it all together is [here](./RadioUnit/README.md).
 
 Do you live in the southern Stockholm area? Then I would be happy to lend you any of my stuff so you can test this for real:
 - Tinymesh Development Kit.
