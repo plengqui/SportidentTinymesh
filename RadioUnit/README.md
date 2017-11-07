@@ -32,7 +32,7 @@ https://www.electrokit.com/teensy-lc.52909
 
 SRR module for connecting to SRR BSM station: 
 http://www.sportident.se/order.aspx?id=472
-To get the actual module (a 1x1 inch circuit board with only the SRR radio and UART connectors) you are supposed to *open up* the plastic enclosure of the dongle and *BREAK THE CIRCUIT BOARD IN HALF*! Yes, it sounds crazy but it's true. There is a notch on either side of the board where you are supposed to break it. If you want to configure if it should transmit on blue or red SRR channel, you need to do that (with SI-Config+) before you break the board.
+To get the actual module (a 1x1 inch circuit board with only the SRR radio and UART connectors) you are supposed to *open up* the plastic enclosure of the dongle and *BREAK THE CIRCUIT BOARD IN HALF*! Yes, it sounds crazy but it's true. Look at the picture below and you can see the broken edge to the right. There is a notch on either side of the board where you are supposed to break it. If you want to configure if it should transmit on blue or red SRR channel, you need to do that (with SI-Config+) before you break the board.
 
 Alternative: wired connection to RS232 BSM station
 - RS232-to-UART converter
