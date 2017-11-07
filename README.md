@@ -70,7 +70,7 @@ This has been completed so far:
 7. Implemented SIRAP protocol in the Python Gateway application. Tested with OLA competition administration system. Now we have a complete end-to-end system!
 
 # Getting the hardware and components
-List of needed components and how to get them is [here](./RadioUnit/NeededComponents.md).
+List of needed components and how to get them is [here](./RadioUnit/README.md).
 
 Do you live in the southern Stockholm area? Then I would be happy to lend you any of my stuff so you can test this for real:
 - Tinymesh Development Kit.
