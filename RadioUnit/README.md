@@ -78,7 +78,7 @@ Connect the following:
 
 | Tinymesh connector | Teensy pin |
 | --- | --- |
-| RX | TX2 (pin 10) |
+| RXD | TX2 (pin 10) |
 | CTS | pin 23 |
 | GND | GND |
 | VCC | 3.3V |
