@@ -3,7 +3,7 @@
 const int POLY = 0x8005;
 const int BITF = 0x8000;
 
-
+// This utility funciton calculates the checksum used in Sportident data packets
 UInt16 calculate_crc(char* buffer,int len)
 {
   int count = len;
@@ -71,13 +71,6 @@ void setup()
 {
   Serial.begin(9600);
   Serial2.begin(19200);
-  while(!Serial);
-    delay(1000);
-
-  char test2[]={211,13,0,44,0,11,223,119,39,14,141,39,0,11,112};
-  Serial.println();
-  Serial.print(calculate_crc(test2,15), 16);
-  Serial.println(" should be BE71");
 }
 
 int k=0;
@@ -116,7 +109,7 @@ void loop()
   Serial2.write(crc.myByte,2);
   Serial2.write(etx);
   //TODO: implement support for CTS flow control (Tinymesh will set CTS=High when its receive buffer is full).  
-  delay(300);
+  delay(3000);
   if(k>=255)
     k=0;
   k++;
