@@ -74,26 +74,27 @@ UInt16 crc(char* buffer,int len)
 
 void setup()
 {
-  Serial.begin(9600);
-  while(!Serial);
-  delay(1000);
+    Serial.begin(9600);
+    while(!Serial);
+    delay(1000);
   
-char test_data[] = {static_cast<char>(0x53), static_cast<char>(0x00), static_cast<char>(0x05), static_cast<char>(0x01), static_cast<char>(0x0F), static_cast<char>(0xB5), static_cast<char>(0x00), static_cast<char>(0x00), static_cast<char>(0x1E), static_cast<char>(0x08)};
-for(int i=0;i<10;i++){
-  Serial.print(test_data[i], HEX);
-  Serial.print(" ");
-}
-Serial.println();
-// 53 0 5 1 F B5 0 0 1E 8 0 0 80 0 0 should give CRC 2C12
-Serial.println();
-Serial.print(crc(test_data,10), 16);
-Serial.println(" should be 2C12");
+    char test_data[] = {static_cast<char>(0x53), static_cast<char>(0x00), static_cast<char>(0x05), static_cast<char>(0x01), static_cast<char>(0x0F), static_cast<char>(0xB5), static_cast<char>(0x00), static_cast<char>(0x00), static_cast<char>(0x1E), static_cast<char>(0x08)};
+    for(int i=0;i<10;i++){
+      Serial.print(test_data[i], HEX);
+      Serial.print(" ");
+    }
+    Serial.println();
+    // 53 0 5 1 F B5 0 0 1E 8 0 0 80 0 0 should give CRC 2C12
+    Serial.println();
+    Serial.print(crc(test_data,10), 16);
+    Serial.println(" should be 2C12");
 
-char test2[]={211,13,0,44,0,11,223,119,39,14,141,39,0,11,112};
-Serial.println();
-Serial.print(crc(test2,15), 16);
-Serial.println(" should be BE71");
+    char test2[]={211,13,0,44,0,11,223,119,39,14,141,39,0,11,112};
+    Serial.println();
+    Serial.print(crc(test2,15), 16);
+    Serial.println(" should be BE71");
 }
+
 void loop()
 {
 
