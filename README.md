@@ -71,19 +71,18 @@ This has been completed so far:
 6.  Got the Sportident SRR chip working with the Radio Unit. So now full integration from Sportident punch to Gateway Application is done. Rudimentary support for flow control reading the Tinymesh CTS status before and after sending each packet. So far relies on Teensys serial buffers for buffering.
 7. Implemented SIRAP protocol in the Python Gateway application. Tested with OLA competition administration system. Now we have a complete end-to-end system!
 
-# Getting the hardware and assembling it
-List of needed components, how to get them and putting it all together is [here](./RadioUnit/README.md).
+# Getting Started
+List of needed components for the Radio Unit, how to get them and putting it all together is [here](./RadioUnit/README.md).
 
-Do you live in the southern Stockholm area? Then I would be happy to lend you any of my stuff so you can test this for real:
-- Tinymesh Development Kit.
-- Individual Tinymesh components.
-- PCB for Tinymesh components and Teensy.
-- Teensy microcontrollers.
-- SlimJim antennas.
+When the Radio Unit is built, you just need to:
+1. connect the antenna
+2. upload the sketch teensy-sportident-srr.ino to the Teensy using the [Arduino IDE](https://www.arduino.cc/en/Main/Software)
+3. connect a usb power source to the micro usb of the Teensy.
+4. attach the gateway demokit module to the pc.
+5. start the [Gateway Application](https://github.com/plengqui/GatewayApplication/blob/master/README.md) on the PC 
+6. try some punches in the SRR station!
 
-Just drop me an email at ```per (kanelbulle) lengquist.se```
-
-Also: do you have a suggestion what this system should be called? Current idea is "SMOC - Sportident Mesh Online Controls".
+Any problems? Just drop me an email at ```per (kanelbulle) lengquist.se```
 
 # TODO: ideas for further improvement
 -	Build more Radio Units and test in more real orienteering events. Please drop me an email if you know where to borrow more SRR master stations.
@@ -92,3 +91,4 @@ Also: do you have a suggestion what this system should be called? Current idea i
 - Invent a way for the person deploying the Radio Units in the forest to get verification that each deployed online control works end-to-end. Perhaps by the Gateway Application publishing its status logs on a web page or [Slack](https://api.slack.com/).
 - Use a Radio Unit as Gateway instead of the rather expensive Demo Kit: Write a Teensy program to configure the Tinymesh module as a gateway. Then use a [simple Teensy program](https://github.com/arduino/Arduino/blob/master/build/shared/examples/04.Communication/MultiSerial/MultiSerial.ino) to pipe through serial data between USB serial and the Tinymesh in normal operation.
 
+Any suggestions or feedback? Just drop me an email at ```per (kanelbulle) lengquist.se```
